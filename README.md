@@ -6,18 +6,18 @@ Backend development for Refugee Stories group app.
 | Endpoint | Description |
 | --- | --- |
 | '/' | The root directory; used as a sanity check to ensure basic server functionality. |
-| '/register | The directory for registering new users, implementing { username: xxx, password: xxx } and assigned an autoincrementing ID |
-| '/login' | The directory to log in, implementing { username: xxx, password: xxx }; a successful log in returns a welcome message and token. |
-| '/test' | displays a list of registered users IF login and auth token are present |
+| '/api/register | The directory for registering new users, implementing { username: xxx, password: xxx } and assigned an autoincrementing ID |
+| '/api/login' | The directory to log in, implementing { username: xxx, password: xxx }; a successful log in returns a welcome message and token. |
+| '/api/test' | displays a list of registered users IF login and auth token are present |
 
 # Once logged in and you've pushed the jwt to headers as 'Authorization'
 
 | Endpoint | Description |
 | --- | --- |
-| '/addstory' | Adds new stories, implementing { name: xxx, story: xxxx xxx xxxx xxxxxx } format viewable to all users; { name } is intended for the speaker or author of the story but may be left blank. |
-| '/stories' | Displays all current stories within the app database. |
-| '/deletestory/:id' | Deletes the story associated with submitted ID. |
-| '/updatestory/:id' | Updates the story associated with submitted ID, and returns new body object with said story |
+| '/api/stories/submit' | Adds new stories, implementing { name: xxx, story: xxxx xxx xxxx xxxxxx } format viewable to all users; { name } is intended for the speaker or author of the story but may be left blank. |
+| '/api/stories' | Displays all current stories within the app database. |
+| '/api/stories/:id' | Deletes the story associated with submitted ID. |
+| '/api/stories/:id' | Updates the story associated with submitted ID, and returns new body object with said story |
 
 
 # Generic Login info:
