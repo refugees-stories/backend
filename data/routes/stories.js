@@ -29,7 +29,7 @@ async function edit(req, res) {
   try {
     const storyItem = await Stories.findById(id);
     if (storyItem) {
-      await Stories.update(id, story);
+      await Stories.update(id, { story });
       res.status(200).json(storyItem);
     } else {
       res.status(404).json({ message: `There is no story by that ID.` });
