@@ -8,7 +8,6 @@ Backend development for Refugee Stories group app.
 | '/' | The root directory; used as a sanity check to ensure basic server functionality. |
 | '/api/register | The directory for registering new users, implementing { username: xxx, password: xxx } and assigned an autoincrementing ID |
 | '/api/login' | The directory to log in, implementing { username: xxx, password: xxx }; a successful log in returns a welcome message and token. |
-| '/api/test' | displays a list of registered users IF login and auth token are present |
 
 # Once logged in and you've pushed the jwt to headers as 'Authorization'
 
