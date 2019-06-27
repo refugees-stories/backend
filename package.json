@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest --watch --verbose",
     "server": "nodemon index.js",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": "https://github.com/refugees-stories/backend.git",
   "author": "Nolan Allen <nolan.r.allen@gmail.com>",
