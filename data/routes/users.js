@@ -55,7 +55,7 @@ users.post('/submit', authenticate, async (req, res) => {
   try {
     const newStory = await Stories.add({ body }, requestOptions);
     if (body) {
-      res.status(200).json(newStory);
+      res.status(201).json(newStory);
     } else {
       res.status(422).json({ message: `Please provide a story to submit it.` });
     };
