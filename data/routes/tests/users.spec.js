@@ -46,35 +46,3 @@ describe('users.post(\'/login\')', () => {
     expect(res.status).toBe(401);
   });
 });
-
-describe('users.post(\'/submit\')', () => {
-  it('Returns Status Code: 201 with correct data.', async () => {
-    const body = {
-      author: 'Author',
-      title: 'Title',
-      image: null,
-      body: 'Body.'
-    };
-    let res = await request(users).post('/submit').send(body);
-    expect(res.status).toBe(201);
-  }); 
-  it('Returns an object.', async () => {
-    const body = {
-      author: 'Author',
-      title: 'Title',
-      image: null,
-      body: 'Body.'
-    };
-    let res = await request(users).post('/submit').send(body);
-    expect(typeof res.body).toEqual('object');
-  });
-  it('Returns Status Code: 422 with missing data.', async () => {
-    const body = {
-      author: 'Author',
-      title: 'Title',
-      image: null
-    };
-    let res = await request(users).post('/submit').send(body);
-    expect(res.status).toBe(422);
-  });
-});
