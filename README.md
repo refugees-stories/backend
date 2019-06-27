@@ -6,15 +6,15 @@ Backend development for Refugee Stories group app.
 | Endpoint | Description |
 | --- | --- |
 | '/' | The root directory; used as a sanity check to ensure basic server functionality. |
-| '/api/register | The directory for registering new users, implementing { username: xxx, password: xxx } and assigned an autoincrementing ID |
-| '/api/login' | The directory to log in, implementing { username: xxx, password: xxx }; a successful log in returns a welcome message and token. |
+| '/api/user/register | The directory for registering new users, implementing { username: xxx, password: xxx } and assigned an autoincrementing ID |
+| '/api/user/login' | The directory to log in, implementing { username: xxx, password: xxx }; a successful log in returns a welcome message and token. |
 
 # Once logged in and you've pushed the jwt to headers as 'Authorization'
 
 | Endpoint | Description |
 | --- | --- |
-| '/api/stories/submit' | Adds new stories, implementing { name: xxx, story: xxxx xxx xxxx xxxxxx } format viewable to all users; { name } is intended for the speaker or author of the story but may be left blank. |
-| '/api/stories' | Displays all current stories within the app database. |
+| '/api/user/submit' | Adds new stories, implementing { name: xxx, story: xxxx xxx xxxx xxxxxx } format viewable to all users; { name } is intended for the speaker or author of the story but may be left blank. |
+| '/api/stories/' | Displays all current stories within the app database. |
 | '/api/stories/:id' | Deletes the story associated with submitted ID. |
 | '/api/stories/:id' | Updates the story associated with submitted ID, and returns new body object with said story |
 
@@ -23,7 +23,7 @@ Backend development for Refugee Stories group app.
 
 | Login | Password |
 | --- | --- |
-| testuser | password |
+| testuser1 | password |
 
 #Final Test
 Final test has not yet been conducted.
