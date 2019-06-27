@@ -47,17 +47,17 @@ users.post('/login', (req, res) => {
 });
 
 users.post('/submit', authenticate, async (req, res) => {
-  const { story } = req.body;
+  const { body } = req.body;
   const requestOptions = {
     headers: { accept: 'application/json' }
   };
 
   try {
-    const newStory = await Stories.add({ story }, requestOptions);
-    if (story) {
+    const newStory = await Stories.add({ body }, requestOptions);
+    if (body) {
       res.status(200).json(newStory);
     } else {
-      res.status(400).json({ message: `Please provide a story to submit it.` });
+      res.status(422).json({ message: `Please provide a story to submit it.` });
     };
   } catch (err) {
     console.log(err);
