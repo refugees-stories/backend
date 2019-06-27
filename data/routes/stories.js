@@ -5,13 +5,10 @@ const stories = express();
 stories.use(express.json());
 
 stories.get('/', (req, res) => {
-  let { story } = req.body;
-  const requestOptions = {
-    headers: { accept: 'application/json' }
-  };
+  let { body } = req.body;
 
   Stories
-    .find({ story }, requestOptions)
+    .find({ body })
     .then(rows => {
       res.status(200).json(rows)
     })
@@ -22,12 +19,12 @@ stories.get('/', (req, res) => {
 
 stories.put('/update', async (req, res) => {
   const { id } = req.params;
-  const { story } = req.body;
+  const { body } = req.body;
 
   try {
     const storyItem = await Stories.findById(id);
     if (storyItem) {
-      await Stories.update(id, { story });
+      await Stories.update(id, { body });
       res.status(200).json(storyItem);
     } else {
       res.status(404).json({ message: `There is no story by that ID.` });

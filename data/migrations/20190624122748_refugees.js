@@ -13,10 +13,11 @@ exports.up = function(knex, Promise) {
     .createTable('stories', tbl => {
       tbl.increments();
 
+      tbl.string('author', 255);
+      tbl.string('title', 255);
+      tbl.blob('image');
       tbl
-        .string('name', 255);
-      tbl
-        .text('story')
+        .text('body')
         .notNullable();
     });
 };

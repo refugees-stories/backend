@@ -1,28 +1,48 @@
-const server = require('../users.js');
+const users = require('../users.js');
 const request = require('supertest');
 
-describe('server.post(\'/api/register\', register)', () => {
+describe('users.post(\'/register\')', () => {
   it('Returns Status Code: 201 with correct data.', async () => {
     const body = {
       username: 'username',
       password: 'password'
-    }
-    let res = await request(server).post('/api/register').send(body);
+    };
+    let res = await request(users).post('/register').send(body);
     expect(res.status).toBe(201);
   }); 
+  it('Returns an object.', async () => {
+    const body = {
+      username: 'username',
+      password: 'password'
+    };
+    let res = await request(users).post('/register').send(body);
+    expect(typeof res.body).toEqual('object');
+  });
 });
 
-describe('server.get(\'/api/stories\', authenticate, getStories)', () => {
-  it('Returns Status Code: 200.', async () => {
-    let res = await request(server).get('/api/stories');
+describe('users.post(\'/login\')', () => {
+  it('Returns Status Code: 201 with correct data.', async () => {
+    const body = {
+      username: 'username',
+      password: 'password'
+    };
+    let res = await request(users).post('/login').send(body);
     expect(res.status).toBe(200);
-  });
-  it('Returns JSON data.', async () => {
-    let res = await request(server).get('/api/stories');
-    expect(res.type).toBe('application/json');
-  });
-  it('Functions without error.', async () => {
-    let res = await request(server).get('/api/stories');
+  }); 
+  it('Returns an object.', async () => {
+    const body = {
+      username: 'username',
+      password: 'password'
+    };
+    let res = await request(users).post('/login').send(body);
     expect(typeof res.body).toEqual('object');
+  });
+  it('Returns Status Code: 401 with incorrect credentials.', async () => {
+    const body = {
+      username: 'username',
+      password: 'alsdfk'
+    };
+    let res = await request(users).post('/login').send(body);
+    expect(res.status).toBe(401);
   });
 });

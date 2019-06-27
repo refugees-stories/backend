@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function find() {
-  return db('stories').select('id', 'name', 'story');
+  return db('stories').select('id', 'author', 'title', 'image', 'body');
 };
 
 function findById(id) {
