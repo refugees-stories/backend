@@ -24,7 +24,7 @@ Backend development for Refugee Stories group app.
 
 | Login | Password |
 | --- | --- |
-| testuser1 | password |
+| testuser | password |
 
 #Final Test
 Final test has not yet been conducted.
