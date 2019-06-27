@@ -15,6 +15,7 @@ Backend development for Refugee Stories group app.
 | --- | --- |
 | '/api/user/submit' | Adds new stories, implementing { name: xxx, story: xxxx xxx xxxx xxxxxx } format viewable to all users; { name } is intended for the speaker or author of the story but may be left blank. |
 | '/api/stories/' | Displays all current stories within the app database. |
+| '/api/stories/:id' | Displays a story associated with submitted ID.' |
 | '/api/stories/:id' | Deletes the story associated with submitted ID. |
 | '/api/stories/:id' | Updates the story associated with submitted ID, and returns new body object with said story |
 
