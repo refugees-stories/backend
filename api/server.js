@@ -12,8 +12,8 @@ server.use(cors());
 server.use(express.json());
 
 /* ROUTES */
-usersRoutes(server);
-storiesRoutes(server);
+server.use('/api/user', usersRoutes);
+server.use('/api/stories', storiesRoutes);
 
 /* SANITY CHECK */
 server.get('/', (req, res) => {
